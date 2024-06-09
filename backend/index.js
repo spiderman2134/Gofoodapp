@@ -24,6 +24,7 @@
 // }
 // );
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const port = 5000;
 const mongoDB = require("./db");
@@ -50,7 +51,7 @@ app.use('/api', require("./Routes/OrderData"));
 app.get('/', (req, res) => {
     res.send('hello world');
 });
-const cors = require('cors');
+
 
 
 app.use(cors({
