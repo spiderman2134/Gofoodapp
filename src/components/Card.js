@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useDispatchCart,useCart } from './ContextReducer';
-import Cart from '../screens/Cart';
+
 export default function Card(props) {
     let data=useCart();
     const priceRef=useRef();
@@ -18,8 +18,8 @@ const handleAddToCart=async()=>{
             break;
         }
     }
-    if(food != []){
-        if(food.size == size){
+    if(food !== []){
+        if(food.size === size){
             await dispatch({type:"UPDATE",id:props.foodItem._id,price:finalPrice,qty:qty})
             return 
         }
